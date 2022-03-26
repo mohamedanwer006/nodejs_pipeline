@@ -7,7 +7,7 @@ pipeline{
             steps{
                 echo "========executing Checkout========"
                 sh "git pull https://github.com/mohamedanwer006/nodejs_pipeline.git"
-                sh "cd nodejs_pipeline"          
+                // sh "cd nodejs_pipeline"          
             }
         }
         stage("Build"){
