@@ -6,9 +6,8 @@ pipeline{
         stage("Checkout"){
             steps{
                 echo "========executing Checkout========"
-                git{
-                    url "https://github.com/mohamedanwer006/nodejs_pipeline.git"
-                }
+                git "https://github.com/mohamedanwer006/nodejs_pipeline.git"
+                cd nodejs_pipeline          
             }
         }
         stage("Build"){
