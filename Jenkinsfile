@@ -18,8 +18,15 @@ pipeline{
         }
         stage("Deploy"){
             steps{
+
+
                 echo "========Executing Deploy========"
-                sh "docker push mohameddev006/nodejs_pipeline"
+
+                withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                     sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+                     sh "docker push mohameddev006/nodejs_pipeline"
+                    }
+               
             }
         }
 
