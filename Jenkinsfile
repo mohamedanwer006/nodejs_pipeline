@@ -7,7 +7,7 @@ pipeline{
             steps{
                 echo "========executing Checkout========"
                 git{
-                    url "https://github.io/mohamedanwer006/nodejs_pipeline.git"
+                    url "https://github.com/mohamedanwer006/nodejs_pipeline.git"
                 }
             }
         }
