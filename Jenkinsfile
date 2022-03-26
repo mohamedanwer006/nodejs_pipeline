@@ -13,7 +13,7 @@ pipeline{
         stage("Build"){
             steps{
                 echo "========Executing Build========"
-                sh "docker build -t nodejs_pipeline ."
+                sh "docker build . -t nodejs_pipeline"
             }
         }
         stage("Deploy"){
