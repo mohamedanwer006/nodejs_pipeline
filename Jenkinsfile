@@ -14,6 +14,8 @@ pipeline{
             steps{
                 echo "========Executing Build========"
                 sh "docker build . -t nodejs_pipeline"
+                sh "docker tag nodejs_pipeline:latest mohameddev006/nodejs_pipeline:latest"
+
             }
         }
         stage("Deploy"){
@@ -24,7 +26,7 @@ pipeline{
 
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                      sh "docker login -u ${USERNAME} -p ${PASSWORD}"
-                     sh "docker push mohameddev006/nodejs_pipeline"
+                     sh "docker push mohameddev006/nodejs_pipeline:latest"
                     }
                
             }
